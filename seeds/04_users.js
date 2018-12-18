@@ -10,7 +10,7 @@ exports.seed = function(knex, Promise) {
           password: 'freshair',
           first_name: 'Jess',
           last_name: 'Markgraf',
-          Age: 34,
+          age: 34,
           vehicle_id: 1,
           trip_id: 1,
           driver: true
@@ -20,7 +20,7 @@ exports.seed = function(knex, Promise) {
           password: 'freshair',
           first_name: 'Josh',
           last_name: 'Scala',
-          Age: 24,
+          age: 24,
           vehicle_id: 2,
           trip_id: 2,
           driver: true
@@ -30,7 +30,7 @@ exports.seed = function(knex, Promise) {
           password: 'freshair',
           first_name: 'Ryan',
           last_name: 'StGermain',
-          Age: 20,
+          age: 20,
           vehicle_id: 3,
           trip_id: 3,
           driver: true
@@ -40,7 +40,7 @@ exports.seed = function(knex, Promise) {
           password: 'freshair',
           first_name: 'Trey',
           last_name: 'Young',
-          Age: 29,
+          age: 29,
           vehicle_id: 4,
           trip_id: 4,
           driver: true
