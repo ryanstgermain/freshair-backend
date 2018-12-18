@@ -4,7 +4,7 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: 'postgresql:///freshair_db'
+    connection: 'postgresql://localhost/freshair_db'
   },
   
   production: {
