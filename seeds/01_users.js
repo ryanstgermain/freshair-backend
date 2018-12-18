@@ -1,41 +1,45 @@
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('users').del()
     .then(function () {
       // Inserts seed entries
-      return knex('table_name').insert([
+      return knex('users').insert([
         {
-          userName: 'WReX',
-          firstName: 'Jess',
-          lastName: 'Markgraf',
+          user_name: 'WReX',
+          password: 'freshair',
+          first_name: 'Jess',
+          last_name: 'Markgraf',
           Age: 34,
-          vehicle: 1,
-          trips: 1
+          vehicle_id: 1,
+          trip_id: 1
         },
         {
-          userName: 'NewCarSmell',
-          firstName: 'Josh',
-          lastName: 'Scala',
+          user_name: 'NewCarSmell',
+          password: 'freshair',
+          first_name: 'Josh',
+          last_name: 'Scala',
           Age: 24,
-          vehicle: 2,
-          trips: 2
+          vehicle_id: 2,
+          trip_id: 2
         },
         {
-          userName: 'EssssGetit',
-          firstName: 'Ryan',
-          lastName: 'StGermain',
+          user_name: 'EssssGetit',
+          password: 'freshair',
+          first_name: 'Ryan',
+          last_name: 'StGermain',
           Age: 20,
-          vehicle: 3,
-          trips: 3
+          vehicle_id: 3,
+          trip_id: 3
         },
         {
-          userName: 'ThatTallDude',
-          firstName: 'Trey',
-          lastName: 'Young',
+          user_name: 'ThatTallDude',
+          password: 'freshair',
+          first_name: 'Trey',
+          last_name: 'Young',
           Age: 29,
-          vehicle: 4,
-          trips: 4
+          vehicle_id: 4,
+          trip_id: 4
         }
       ]);
     });
