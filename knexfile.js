@@ -21,7 +21,7 @@ module.exports = {
   development: {
     client: 'pg',
     connection: {
-      database: 'g_bank',
+      database: 'freshair_db',
       user: process.env.DB_USER,
       password: process.env.DB_PASS
     }
