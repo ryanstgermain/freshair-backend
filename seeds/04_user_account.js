@@ -1,10 +1,10 @@
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('user_account').del()
+  return knex('user_accounts').del()
     .then(function () {
       // Inserts seed entries
-      return knex('user_account').insert([
+      return knex('user_accounts').insert([
         {
           trip_id: 1,
           amount: 14.00,
