@@ -8,8 +8,8 @@ exports.seed = function(knex, Promise) {
         {
           trip_id: 1,
           amount: 14.00,
-          owner_id: 4
+          user_id: 4
         }
-      ]);
-    });
-};
+      ])
+    })
+}

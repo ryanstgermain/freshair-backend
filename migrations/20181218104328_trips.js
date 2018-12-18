@@ -9,11 +9,9 @@ exports.up = function(knex, Promise) {
         trip.integer('end_time')
         trip.integer('location_id')
         trip.foreign('location_id').references('locations.id')
-        trip.integer('user_id')
-        trip.foreign('user_id').references('users.id')
     }) 
-};
+}
 
 exports.down = function(knex, Promise) {
-  
-};
+  return knex.schema.dropTableIfExists('trips')
+}
