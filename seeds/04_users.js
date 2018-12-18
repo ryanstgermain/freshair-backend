@@ -12,7 +12,8 @@ exports.seed = function(knex, Promise) {
           last_name: 'Markgraf',
           Age: 34,
           vehicle_id: 1,
-          trip_id: 1
+          trip_id: 1,
+          driver: true
         },
         {
           user_name: 'NewCarSmell',
@@ -21,7 +22,8 @@ exports.seed = function(knex, Promise) {
           last_name: 'Scala',
           Age: 24,
           vehicle_id: 2,
-          trip_id: 2
+          trip_id: 2,
+          driver: true
         },
         {
           user_name: 'EssssGetit',
@@ -30,7 +32,8 @@ exports.seed = function(knex, Promise) {
           last_name: 'StGermain',
           Age: 20,
           vehicle_id: 3,
-          trip_id: 3
+          trip_id: 3,
+          driver: true
         },
         {
           user_name: 'ThatTallDude',
@@ -39,8 +42,9 @@ exports.seed = function(knex, Promise) {
           last_name: 'Young',
           Age: 29,
           vehicle_id: 4,
-          trip_id: 4
+          trip_id: 4,
+          driver: true
         }
-      ]);
-    });
-};
+      ])
+    })
+}

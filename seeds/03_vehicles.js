@@ -12,7 +12,6 @@ exports.seed = function(knex, Promise) {
           drivetrain: 'RWD',
           passenger_available: 3,
           plate_number: '420 WEE',
-          user_id: 1
         },
         {
           make: 'Subaru',
@@ -21,7 +20,6 @@ exports.seed = function(knex, Promise) {
           drivetrain: 'AWD',
           passenger_available: 3,
           plate_number: 'BRAAAAP',
-          user_id: 2
         },
         {
           make: 'Toyota',
@@ -30,8 +28,15 @@ exports.seed = function(knex, Promise) {
           drivetrain: 'FWD',
           passenger_available: 3,
           plate_number: 'SLOLYFE',
-          user_id: 3
+        },
+        {
+          make: 'Ford',
+          model: 'Mustang',
+          year: 2018,
+          drivetrain: 'RWD',
+          passenger_available: 3,
+          plate_number: '420 WEE',
         }
-      ]);
-    });
-};
+      ])
+    })
+}

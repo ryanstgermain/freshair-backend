@@ -9,8 +9,8 @@ exports.up = function(knex, Promise) {
     location.text('rental_url')
     location.text('weather_url')
   })
-};
+}
 
 exports.down = function(knex, Promise) {
   return knex.schema.dropTableIfExists('locations')
-};
+}

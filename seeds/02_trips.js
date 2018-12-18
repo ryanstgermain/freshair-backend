@@ -37,6 +37,6 @@ exports.seed = function(knex, Promise) {
             start_time: 0600,
             end_time: 1800
         }
-      ]);
-    });
-};
+      ])
+    })
+}

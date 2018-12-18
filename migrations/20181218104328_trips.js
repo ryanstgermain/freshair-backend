@@ -10,8 +10,8 @@ exports.up = function(knex, Promise) {
         trip.integer('location_id')
         trip.foreign('location_id').references('locations.id')
     }) 
-};
+}
 
 exports.down = function(knex, Promise) {
-  
-};
+  return knex.schema.dropTableIfExists('trips')
+}

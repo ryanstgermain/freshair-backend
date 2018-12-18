@@ -44,6 +44,6 @@ exports.seed = function(knex, Promise) {
           rental_url: 'https://www.rentskis.com/#!/resort/vail-resort',
           weather_url: 'https://www.vail.com/the-mountain/mountain-conditions/snow-and-weather-report.aspx'
         }
-      ]);
-    });
-};
+      ])
+    })
+}
