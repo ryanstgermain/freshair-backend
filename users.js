@@ -4,4 +4,18 @@ const queries = require('./users_queries.js')
 
 router.route('/')
 
+  .get((req, res, next) => {
+
+  })
+
+  .post((req, res, next) => {
+
+  })
+
+router.param(['id'], async (req, res, next, value) => {
+
+})
+
+router.route('/:id')
+
 module.exports = router
