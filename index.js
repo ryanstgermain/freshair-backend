@@ -7,9 +7,9 @@ const port = process.env.PORT || 8080
 app.use(cors())
 app.use(parser.json())
 
-const users = require('./users.js')
-const trips = require('./trips.js')
-const locations = require('./locations.js')
+const users = require('./routes/users.js')
+const trips = require('./routes/trips.js')
+const locations = require('./routes/locations.js')
 
 app.use('/users', users)
 
@@ -23,5 +23,5 @@ app.use((err, req, res, next) => {
 })
 
 app.listen(port, () => {
-  console.log(`Welcome to G National Bank, FOR G's!!! On port:${port}`)
+  console.log(`Welcome to Fresh Airide, FOR G's!!! On port:${port}`)
 })

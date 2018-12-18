@@ -1,5 +1,7 @@
-const db = require('../database_connection')
+const db = require('../database-connection')
 
 module.exports = {
-  
+  getAllLocations(){
+    return db('locations')
+  }
 }
