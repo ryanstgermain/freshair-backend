@@ -5,6 +5,6 @@ module.exports = {
     return db('locations')
   },
   getLocationByName(name){
-    return db('locations').where('resort_name', name).returning('*')
+    return db('locations').where('resort_name', name).first()
   }
 }
