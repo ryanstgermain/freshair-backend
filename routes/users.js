@@ -8,7 +8,7 @@ router.route('/login')
 
   .get(async (req, res, next) => {
     if( req.body.user_name === '' || req.body.password === '' ) {
-      next({ status: 404, message: 'Please fill out all required fields.' })
+      return  next({ status: 404, message: 'Please fill out all required fields.' })
     }
     let user = await queries.loginUser(req.body.user_name)
     if( bcrypt.compareSync(req.body.password, user.password) ){
