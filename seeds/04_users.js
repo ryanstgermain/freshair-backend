@@ -44,6 +44,16 @@ exports.seed = function(knex, Promise) {
           vehicle_id: 4,
           trip_id: 4,
           driver: true
+        },
+        {
+          user_name: 'Bob',
+          password: '$2b$10$JadQK/7BsIx.O0blBsouPemHy4uG7A4FIel1fus.UzaylsHa3fc02',
+          first_name: 'Destroyer',
+          last_name: 'asd',
+          age: 69,
+          driver: false,
+          vehicle_id: 2,
+          trip_id: 2
         }
       ])
     })
