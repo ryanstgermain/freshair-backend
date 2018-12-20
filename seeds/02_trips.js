@@ -8,7 +8,7 @@ exports.seed = function(knex, Promise) {
         {
             location_id: 1,
             date: 20190105,
-            seats_availible: 1,
+            seats_available: 1,
             seat_price: 20.00,
             start_time: '06:00',
             end_time: '18:00'
@@ -16,7 +16,7 @@ exports.seed = function(knex, Promise) {
         {
             location_id: 2,
             date: 20190105,
-            seats_availible: 3,
+            seats_available: 3,
             seat_price: 10.00,
             start_time: '06:00',
             end_time: '18:00'
@@ -24,7 +24,7 @@ exports.seed = function(knex, Promise) {
         {
             location_id: 3,
             date: 20190105,
-            seats_availible: 2,
+            seats_available: 2,
             seat_price: 15.00,
             start_time: '06:00',
             end_time: '18:00'
@@ -32,7 +32,7 @@ exports.seed = function(knex, Promise) {
         {
             location_id: 4,
             date: 20190105,
-            seats_availible: 1,
+            seats_available: 1,
             seat_price: 20.00,
             start_time: '06:00',
             end_time: '18:00'
