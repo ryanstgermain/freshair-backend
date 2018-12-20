@@ -7,19 +7,15 @@ const pants = require('../database-connection.js')[1]
 
 function tokenCreation(user_name){
   let tokenID = { user: user_name }
-  let token = jwt.sign(tokenID, pants, { expiresIn: 180 });
+  let token = jwt.sign(tokenID, pants, { expiresIn: 18000 });
   return token
-}
-
-function tokenAuthentication(token){
-
 }
 
 router.route('/login')
 
   .get(async (req, res, next) => {
     if( req.body.user_name === '' || req.body.password === '' ) {
-      return  next({ status: 404, message: 'Please fill out all required fields.' })
+      return next({ status: 404, message: 'Please fill out all required fields.' })
     }
     let user = await queries.loginUser(req.body.user_name)
     if( bcrypt.compareSync(req.body.password, user.password) ){
@@ -43,21 +39,30 @@ router.route('/signup')
     }
     queries.createNewUser(user).then(newUser => {
       justUser = newUser[0]
-      justUser = { ...justUser, login: true }
+      justUser = { ...justUser, token: tokenCreation() }
       res.status(201).send(justUser)
     })
   })
 
-router.route('/:user_name/home/:user_id')
-  .get(async (req, res) => {
-    let id = req.params.user_id
-    let userViewed = req.params.user_name
-    let user = await queries.getUserByUsername(userViewed)
-    if( user.id === id ){
-      queries.getHomeInfo(id)
-    } else { 
+  router.use((req, res, next) => {
+    var token = req.body.token 
+    if (token) {
+      jwt.verify(token, pants, (err, decoded) => {
+        if (err) {
+          return next({ status: 400, message: 'Failed to authenticate.' })  
+        } else {
+          req.decoded = decoded
+          next()
+        }
+      })
+    } else {
+      return next({ status: 400, message: 'No token provided.' }) 
+    }
+  })
 
-    }  
+router.route('/home')
+  .get((req, res) => {
+    
   })
 
 // router.route('/:id')
