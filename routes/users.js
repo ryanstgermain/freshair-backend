@@ -14,11 +14,11 @@ function tokenCreation(user_name){
 router.route('/login')
 
   .get(async (req, res, next) => {
-    if( req.body.user_name === '' || req.body.password === '' ) {
+    if( req.headers.user_name === '' || req.headers.password === '' ) {
       return next({ status: 404, message: 'Please fill out all required fields.' })
     }
-    let user = await queries.loginUser(req.body.user_name)
-    if( bcrypt.compareSync(req.body.password, user.password) ){
+    let user = await queries.loginUser(req.headers.user_name)
+    if( bcrypt.compareSync(req.headers.password, user.password) ){
       user = { ...user, password: "pants", token: tokenCreation() }
       res.status(200).send(user)
     } else { 
