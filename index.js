@@ -6,7 +6,6 @@ const port = process.env.PORT || 8080
 
 app.use(cors())
 app.use(parser.json())
-app.set('pants',)
 
 const users = require('./routes/users.js')
 const trips = require('./routes/trips.js')

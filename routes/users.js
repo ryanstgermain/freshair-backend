@@ -2,7 +2,18 @@ const express = require('express')
 const router = express.Router()
 const queries = require('../queries/users_queries.js')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
+const pants = require('../database-connection.js')[1]
 
+function tokenCreation(user_name){
+  let tokenID = { user: user_name }
+  let token = jwt.sign(tokenID, pants, { expiresIn: 180 });
+  return token
+}
+
+function tokenAuthentication(token){
+
+}
 
 router.route('/login')
 
@@ -12,7 +23,7 @@ router.route('/login')
     }
     let user = await queries.loginUser(req.body.user_name)
     if( bcrypt.compareSync(req.body.password, user.password) ){
-      user = { ...user, login: true }
+      user = { ...user, token: tokenCreation() }
       res.status(200).send(user)
     } else { 
       next({ status: 404, message: 'Username, password, or both, are invalid.' }) 
