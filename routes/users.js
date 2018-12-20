@@ -19,7 +19,7 @@ router.route('/login')
     }
     let user = await queries.loginUser(req.body.user_name)
     if( bcrypt.compareSync(req.body.password, user.password) ){
-      user = { ...user, token: tokenCreation() }
+      user = { ...user, password: "pants", token: tokenCreation() }
       res.status(200).send(user)
     } else { 
       next({ status: 404, message: 'Username, password, or both, are invalid.' }) 

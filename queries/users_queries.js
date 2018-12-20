@@ -8,7 +8,7 @@ module.exports = {
     return db[0]('users').where('id', user_id).update('trip_id', trip_id)
   },
   loginUser(user_name){
-    return db[0]('users').where('user_name', user_name ).first()
+    return db[0]('users').select('id', 'password').where('user_name', user_name ).first()
   },
   getUserByUsername(user_name){
     return db[0]('users').select('id',).where('user_name', user_name ).first()
