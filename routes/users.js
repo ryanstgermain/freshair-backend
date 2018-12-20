@@ -19,7 +19,7 @@ router.route('/login')
     }
     let user = await queries.loginUser(req.headers.user_name)
     if( bcrypt.compareSync(req.headers.password, user.password) ){
-      user = { ...user, password: "pants", token: tokenCreation() }
+      user = { ...user, password: 'pants', token: tokenCreation() }
       res.status(200).send(user)
     } else { 
       next({ status: 404, message: 'Username, password, or both, are invalid.' }) 
@@ -44,21 +44,21 @@ router.route('/signup')
     })
   })
 
-router.use((req, res, next) => {
-  var token = req.headers.token 
-  if (token) {
-    jwt.verify(token, pants, (err, decoded) => {
-      if (err) {
-        return next({ status: 400, message: 'Failed to authenticate.' })  
-      } else {
-        req.decoded = decoded
-        next()
-      }
-    })
-  } else {
-    return next({ status: 400, message: 'No token provided.' }) 
-  }
-})
+// router.use((req, res, next) => {
+//   var token = req.headers.token 
+//   if (token) {
+//     jwt.verify(token, pants, (err, decoded) => {
+//       if (err) {
+//         return next({ status: 400, message: 'Failed to authenticate.' })  
+//       } else {
+//         req.decoded = decoded
+//         next()
+//       }
+//     })
+//   } else {
+//     return next({ status: 400, message: 'No token provided.' }) 
+//   }
+// })
 
 router.route('/home')
   .get((req, res) => {
