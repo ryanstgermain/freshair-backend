@@ -6,6 +6,6 @@ const configEnv = config[environment]
 
 const knex = require('knex')
 
-const connection = knex(configEnv)
+const connection = [ knex(configEnv), 'oneLegAtATime' ]
 
 module.exports = connection

@@ -2,9 +2,9 @@ const db = require('../database-connection')
 
 module.exports = {
   getAllLocations(){
-    return db('locations')
+    return db[0]('locations')
   },
   getLocationByName(name){
-    return db('locations').where('resort_name', name).first()
+    return db[0]('locations').where('resort_name', name).first()
   }
 }
