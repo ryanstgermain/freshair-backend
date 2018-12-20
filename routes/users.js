@@ -62,7 +62,8 @@ router.route('/signup')
 
 router.route('/home')
   .get((req, res) => {
-    queries.getHomeInfo(req.body.user_id).then(homeInfo => res.status(200).send(homeInfo))
+    //getHomeInfo should take in the user_id from 'req.body.user_id', but for now it is hardcoded to '2'
+    queries.getHomeInfo(2).then(homeInfo => res.status(200).send(homeInfo))
   })
 
 // router.route('/:id')
